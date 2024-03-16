@@ -1,7 +1,11 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import os
 
+
+
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route('/book_image/<ean>', methods=['GET'])
 def get_images(ean):
